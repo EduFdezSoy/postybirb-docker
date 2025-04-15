@@ -5,7 +5,7 @@ ARG FILE_NAME="postybirb-plus.AppImage"
 
 RUN apt-get update
 RUN apt-get install -y fuse wget libatk1.0-0
-RUN wget ${FILE_DDL} -O ${FILE_NAME}
+RUN wget --no-verbose ${FILE_DDL} -O ${FILE_NAME}
 RUN chmod +x ${FILE_NAME}
 RUN apt-get purge -y wget
 RUN apt-get autoremove -y
