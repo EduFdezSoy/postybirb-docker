@@ -14,3 +14,5 @@ RUN chmod +x ${FILE_NAME}
 RUN apt-get purge -y wget jq
 RUN apt-get autoremove -y
 RUN apt-get clean
+
+COPY /${FILE_NAME} /bin/postybirb
