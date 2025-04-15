@@ -1,0 +1,25 @@
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop:ubuntu-xfce
+    container_name: postybird
+    security_opt:
+      - seccomp:unconfined # to allow syscalls on older Kernels
+    environment:
+      - TZ=America/Mexico_City
+      - TITLE=PostyBird
+      - DISABLE_IPV6=true
+      - FM_HOME="/home/postybird"
+
+      - DOCKER_MODS=linuxserver/mods:universal-package-install
+      - INSTALL_PACKAGES=libfuse2
+
+      - PUID=1000 # Ensure any volume directories on the host are owned by the same
+      - PGID=1000 # user you specify and any permissions issues will vanish like magic.
+
+      - CUSTOM_USER=user
+      - PASSWORD=password
+    volumes:
+      - /path/to/data:/home/postybird
+    ports:
+      - 3001:3001
+    restart: unless-stopped
