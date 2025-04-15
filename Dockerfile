@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble AS baseimage
 
 # INSTALL DEPENDENCIES
 RUN apt-get update
@@ -15,5 +15,5 @@ RUN apt-get purge -y wget jq
 RUN apt-get autoremove -y
 RUN apt-get clean
 
-FROM 0
+FROM baseimage
 COPY /${FILE_NAME} /bin/postybirb
