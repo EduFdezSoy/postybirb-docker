@@ -15,4 +15,5 @@ RUN apt-get purge -y wget jq
 RUN apt-get autoremove -y
 RUN apt-get clean
 
+FROM 0
 COPY /${FILE_NAME} /bin/postybirb
