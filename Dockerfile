@@ -2,7 +2,7 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
 
 # INSTALL DEPENDENCIES
 RUN apt-get update
-RUN apt-get install -y wget jq fuse libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
+RUN apt-get install -y wget jq fuse libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 python-xdg
 
 # DOWNLOAD APP
 ARG FILE_NAME="postybirb-plus.AppImage"
