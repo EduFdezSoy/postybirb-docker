@@ -1,1 +1,1 @@
-/usr/bin/postybirb
+sleep 3 && /usr/bin/postybirb
