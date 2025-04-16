@@ -15,3 +15,6 @@ RUN mv ${FILE_NAME} /bin/postybirb
 RUN apt-get purge -y wget jq
 RUN apt-get autoremove -y
 RUN apt-get clean
+
+# COPY DEFAULTS
+COPY /root /
